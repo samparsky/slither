@@ -59,7 +59,7 @@ def exit(results):
     sys.exit(len(results))
 
 
-def main():
+def main(more_detectors=[], more_printers=[]):
     """
     NOTE: This contains just a few detectors and printers that we made public.
     """
@@ -68,14 +68,15 @@ def main():
     from slither.detectors.attributes.constant_pragma import ConstantPragma
     from slither.detectors.attributes.old_solc import OldSolc
 
-    detectors = [Backdoor, UninitializedStateVarsDetection, ConstantPragma, OldSolc]
+    detectors = [Backdoor, UninitializedStateVarsDetection, ConstantPragma, OldSolc] + more_detectors
 
     from slither.printers.summary.printerSummary import PrinterSummary
     from slither.printers.summary.printerQuickSummary import PrinterQuickSummary
     from slither.printers.inheritance.printerInheritance import PrinterInheritance
     from slither.printers.functions.authorization import PrinterWrittenVariablesAndAuthorization
 
-    printers = [PrinterSummary, PrinterQuickSummary, PrinterInheritance, PrinterWrittenVariablesAndAuthorization]
+    printers = [PrinterSummary, PrinterQuickSummary, PrinterInheritance,
+                PrinterWrittenVariablesAndAuthorization] + more_printers
 
     main_impl(all_detector_classes=detectors, all_printer_classes=printers)
 
