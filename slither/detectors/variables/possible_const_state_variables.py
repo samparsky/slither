@@ -73,6 +73,7 @@ class ConstCandidateStateVars(AbstractDetector):
 
                     json = self.generate_json_result()
                     self.add_variables_to_json(variables, json)
+                    self.add_contract_to_json(c, json)
                     results.append(json)
 
         if all_info != '':

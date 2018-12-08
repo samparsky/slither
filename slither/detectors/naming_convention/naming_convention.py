@@ -55,6 +55,8 @@ class NamingConvention(AbstractDetector):
                 results.append({'check': self.ARGUMENT,
                                 'type': 'contract',
                                 'convention':'CapWords',
+                                'contract': {'name': contract.name, 'source_mapping': contract.source_mapping},
+                                'message': info,
                                 'name':{'name': contract.name,
                                         'source_mapping': contract.source_mapping}})
 
@@ -71,6 +73,8 @@ class NamingConvention(AbstractDetector):
                     results.append({'check': self.ARGUMENT,
                                     'type': 'structure',
                                     'convention':'CapWords',
+                                    'contract': {'name': contract.name, 'source_mapping': contract.source_mapping},
+                                    'message': info,                                    
                                     'name':{'name': struct.name,
                                             'source_mapping': struct.source_mapping}})
 
@@ -87,6 +91,8 @@ class NamingConvention(AbstractDetector):
                     results.append({'check': self.ARGUMENT,
                                     'type': 'event',
                                     'convention':'CapWords',
+                                    'contract': {'name': contract.name, 'source_mapping': contract.source_mapping},
+                                    'message': info,                                    
                                     'name':{'name': event.name,
                                             'source_mapping': event.source_mapping}})
 
@@ -102,6 +108,8 @@ class NamingConvention(AbstractDetector):
                     results.append({'check': self.ARGUMENT,
                                     'type': 'function',
                                     'convention':'mixedCase',
+                                    'contract': {'name': contract.name, 'source_mapping': contract.source_mapping},
+                                    'message': info,     
                                     'name':{'name': func.name,
                                             'source_mapping': func.source_mapping}})
 
@@ -121,6 +129,8 @@ class NamingConvention(AbstractDetector):
                         results.append({'check': self.ARGUMENT,
                                         'type': 'parameter',
                                         'convention':'mixedCase',
+                                        'contract': {'name': contract.name, 'source_mapping': contract.source_mapping},
+                                        'message': info,     
                                         'name':{'name': argument.name,
                                                 'source_mapping': argument.source_mapping}})
 
@@ -137,6 +147,8 @@ class NamingConvention(AbstractDetector):
                         results.append({'check': self.ARGUMENT,
                                         'type': 'variable',
                                         'convention':'l_O_I_should_not_be_used',
+                                        'contract': {'name': contract.name, 'source_mapping': contract.source_mapping},
+                                        'message': info,                                             
                                         'name':{'name': var.name,
                                                 'source_mapping': var.source_mapping}})
 
@@ -153,6 +165,8 @@ class NamingConvention(AbstractDetector):
                         results.append({'check': self.ARGUMENT,
                                         'type': 'variable_constant',
                                         'convention':'UPPER_CASE_WITH_UNDERSCORES',
+                                        'contract': {'name': contract.name, 'source_mapping': contract.source_mapping},
+                                        'message': info,
                                         'name':{'name': var.name,
                                                 'source_mapping': var.source_mapping}})
                 else:
@@ -168,6 +182,8 @@ class NamingConvention(AbstractDetector):
                         results.append({'check': self.ARGUMENT,
                                         'type': 'variable',
                                         'convention':'mixedCase',
+                                        'contract': {'name': contract.name, 'source_mapping': contract.source_mapping},
+                                        'message': info,     
                                         'name':{'name': var.name,
                                                 'source_mapping': var.source_mapping}})
 
@@ -183,6 +199,8 @@ class NamingConvention(AbstractDetector):
                     results.append({'check': self.ARGUMENT,
                                     'type': 'enum',
                                     'convention':'CapWords',
+                                    'contract': {'name': contract.name, 'source_mapping': contract.source_mapping},
+                                    'message': info,     
                                     'name':{'name': enum.name,
                                             'source_mapping': enum.source_mapping}})
 
@@ -200,6 +218,8 @@ class NamingConvention(AbstractDetector):
                     results.append({'check': self.ARGUMENT,
                                     'type': 'modifier',
                                     'convention':'mixedCase',
+                                    'contract': {'name': contract.name, 'source_mapping': contract.source_mapping},
+                                    'message': info,
                                     'name':{'name': modifier.name,
                                             'source_mapping': modifier.source_mapping}})
         if all_info != '':

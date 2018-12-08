@@ -114,6 +114,7 @@ class ArbitrarySend(AbstractDetector):
 
                 json = self.generate_json_result()
                 self.add_function_to_json(func, json)
+                self.add_contract_to_json(c, json)
                 self.add_nodes_to_json(nodes, json)
                 results.append(json)
 

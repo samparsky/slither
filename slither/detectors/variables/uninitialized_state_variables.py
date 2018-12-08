@@ -87,6 +87,7 @@ class UninitializedStateVarsDetection(AbstractDetector):
 
                 json = self.generate_json_result()
                 self.add_variable_to_json(variable, json)
+                self.add_contract_to_json(c, json)
                 self.add_functions_to_json(functions, json)
                 results.append(json)
 

@@ -96,6 +96,7 @@ class UninitializedLocalVars(AbstractDetector):
             json = self.generate_json_result()
             self.add_variable_to_json(uninitialized_local_variable, json)
             self.add_function_to_json(function, json)
+            self.add_contract_to_json(function.contract, json)
             results.append(json)
 
         return results

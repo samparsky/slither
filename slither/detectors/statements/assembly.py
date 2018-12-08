@@ -57,6 +57,7 @@ class Assembly(AbstractDetector):
 
                 json = self.generate_json_result()
                 self.add_function_to_json(func, json)
+                self.add_contract_to_json(c, json)
                 json['assembly'] = [{'source_mapping': node.source_mapping}
                                     for node in nodes]
                 results.append(json)

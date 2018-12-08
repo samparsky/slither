@@ -29,7 +29,7 @@ class ConstantPragma(AbstractDetector):
             for p in pragma:
                 info += "\t- {} declares {}\n".format(p.source_mapping_str, str(p))
             self.log(info)
-
+            
             json = self.generate_json_result()
             # follow the same format than add_nodes_to_json
             json['expressions'] = [{'expression': p.version,
