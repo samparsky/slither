@@ -56,8 +56,9 @@ class LockedEther(AbstractDetector):
                                       [f.name for f in funcs_payable])
                     self.log(info)
 
-                    json = self.generate_json_result(contract=contract.name)
+                    json = self.generate_json_result()
                     self.add_functions_to_json(funcs_payable, json)
+                    self.add_error_message_to_json(info, json)
                     self.add_contract_to_json(contract, json)
                     results.append(json)
 

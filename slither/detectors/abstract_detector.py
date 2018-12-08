@@ -109,6 +109,13 @@ class AbstractDetector(metaclass=abc.ABCMeta):
         d['function'] = {'name': function.name, 'source_mapping': function.source_mapping}
 
     @staticmethod
+    def add_error_message_to_json(error_message, d):
+        if 'message' not in d:
+            d['message'] = [error_message]
+        else:
+            d['message'].append(error_message)
+
+    @staticmethod
     def add_functions_to_json(functions, d):
         assert 'functions' not in d
         d['functions'] = [{'name': function.name,

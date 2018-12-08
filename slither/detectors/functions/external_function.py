@@ -68,6 +68,7 @@ class ExternalFunction(AbstractDetector):
                 json = self.generate_json_result()
                 self.add_function_to_json(func, json)
                 self.add_contract_to_json(contract, json)
+                self.add_error_message_to_json(info, json)
                 results.append(json)
         if all_info != '':
             self.log(all_info)

@@ -48,6 +48,7 @@ class UnusedStateVars(AbstractDetector):
                 json = self.generate_json_result()
                 self.add_variables_to_json(unusedVars, json)
                 self.add_contract_to_json(c, json)
+                self.add_error_message_to_json(info, json)
                 results.append(json)
 
         if all_info != '':

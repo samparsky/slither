@@ -207,6 +207,7 @@ class Reentrancy(AbstractDetector):
             json = self.generate_json_result()
             self.add_function_to_json(func, json)
             self.add_contract_to_json(func.contract, json)
+            self.add_error_message_to_json(info, json)
             json['external_calls'] = [{'expression': str(call_info.expression),
                                        'source_mapping': call_info.source_mapping}
                                       for call_info in calls]

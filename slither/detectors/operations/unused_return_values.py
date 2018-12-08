@@ -64,6 +64,7 @@ class UnusedReturnValues(AbstractDetector):
                     self.add_function_to_json(f, json)
                     self.add_contract_to_json(c, json)
                     self.add_nodes_to_json(unused_return, json)
+                    self.add_error_message_to_json(info, json)
                     results.append(json)
 
         return results

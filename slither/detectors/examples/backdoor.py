@@ -26,6 +26,7 @@ class Backdoor(AbstractDetector):
                     # Add the result in result
                     json = self.generate_json_result()
                     self.add_function_to_json(f, json)
+                    self.add_error_message_to_json(info, json)
                     results.append(json)
 
 

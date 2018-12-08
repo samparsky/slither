@@ -55,6 +55,7 @@ class LowLevelCalls(AbstractDetector):
                 self.add_function_to_json(func, json)
                 self.add_contract_to_json(c, json)
                 self.add_nodes_to_json(nodes, json)
+                self.add_error_message_to_json(info, json)
                 results.append(json)
 
 

@@ -34,6 +34,7 @@ class OldSolc(AbstractDetector):
             self.log(info)
 
             json = self.generate_json_result()
+            self.add_error_message_to_json(info, json)
             # follow the same format than add_nodes_to_json
             json['expressions'] = [{'expression': p.version,
                                     'source_mapping': p.source_mapping} for p in old_pragma]

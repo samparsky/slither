@@ -108,6 +108,7 @@ class ComplexFunction(AbstractDetector):
                 json = self.generate_json_result()
                 self.add_function_to_json(func, json)
                 self.add_contract_to_json(contract, json)
+                self.add_error_message_to_json(info, json)
                 json['high_number_of_external_calls'] = cause == self.CAUSE_EXTERNAL_CALL
                 json['high_number_of_branches'] = cause == self.CAUSE_CYCLOMATIC
                 json['high_number_of_state_variables'] = cause == self.CAUSE_STATE_VARS
